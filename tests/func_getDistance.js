@@ -1,4 +1,4 @@
-const getDistance = require('../src/func/getDistance.js');
+const { getDistance } = require('../src/func');
 
 const expected_earth_measure = 10008;
 const expected_custom_radius_measure = 157;

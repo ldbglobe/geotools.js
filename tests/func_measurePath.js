@@ -1,4 +1,4 @@
-const measurePath = require('../src/func/measurePath.js');
+const { measurePath } = require('../src/func');
 
 const expected_measure = 10008;
 

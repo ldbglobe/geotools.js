@@ -1,4 +1,4 @@
-const toRad = require('../src/func/toRad.js');
+const { toRad } = require('../src/func');
 
 const tests = [
 	{ name: 'case1', result: toRad(0) == 0 },

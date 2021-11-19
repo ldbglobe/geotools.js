@@ -1,4 +1,4 @@
-const proximityTest = require('../src/func/proximityTest.js');
+const { proximityTest } = require('../src/func');
 
 const points = [
 	[0,10],

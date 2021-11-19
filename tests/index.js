@@ -3,6 +3,9 @@ const tests = [
 	'func_getDistance',
 	'func_measurePath',
 	'func_proximityTest',
+	'classes_getDistance',
+	'classes_measurePath',
+	'classes_proximityTest',
 ];
 
 tests.forEach((code) => {

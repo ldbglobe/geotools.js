@@ -1,20 +1,29 @@
 const getDistance = require('./func/getDistance.js');
-const mesurePath = require('./func/mesurePath.js');
+const measurePath = require('./func/measurePath.js');
+const proximityTest = require('./func/proximityTest.js');
 
 class GeoTools {
-
 	settings = {
 		//see constructor
 	}
 
-	constructor({...radius}) {
-		settings.radius = parseInt(radius)>0 ? parseInt(radius) : 6371;
+	constructor(settings) {
+		this.settings.RADIUS = parseInt(settings?.radius)>0 ? parseInt(settings?.radius) : 6371;
+	}
+	setRadius(radius) { settings.RADIUS = radius; }
+
+
+	getDistance(from, to, radius=null) {
+		return getDistance(from, to, radius || this.settings.RADIUS)
 	}
 
-	getDistance(from, to, RADIUS=6371) { getDistance(from, to, RADIUS) }
-	mesurePath(points, RADIUS=6371) { mesurePath(points, RADIUS) }
-	getDistance(from, to, RADIUS=6371) { getDistance(from, to, RADIUS) }
+	measurePath(points) {
+		return measurePath(points, this.settings.RADIUS)
+	}
 
+	proximityTest(basePoint, points, limit) {
+		return proximityTest(basePoint, points, limit, this.settings.RADIUS)
+	}
 }
 
-module.exports = GeoTools;
+module.exports = GeoTools
